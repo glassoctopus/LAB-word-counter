@@ -5,19 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Word Counter</title>
-  <style rel="stylesheet" href="main.css"></style>
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <script src="main.js"></script>
+
   <h1>Word Counter</h1>
   <button id="bg-switch">Dark Mode</button>
   <div id="error" class="error"></div>
+<div id="textBox">
   <form>
-    <textarea placeholder="Place your words here..."></textarea>
-    <button type="submit">Submit</button>
-    <button type="reset">Clear</button>
+    <textarea id="textArea" placeholder="Place your words here..."></textarea>
+  </div>
+    <button id="submitBtn" type="submit">Submit</button>
+    <button id="clearBtn" type="reset">Clear</button>
   </form>
   <div id="word-count"></div>
+  <p id="p"></p>
 
+
+  <script src="main.js"></script>
 </body>
 </html>

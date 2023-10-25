@@ -6,17 +6,29 @@ const wordCounter = (value) => {
 
   if (value) {
     // COMPLETE THE LOGIC 
-    wordCount.innerHTML = `Word Count: 0`; 
+    let words = value.split(" ");
+    console.log(value)
+    wordCount.innerHTML = `Word Count: ${words.length}`; 
   } else {
     // if the value is empty, set the error message value to "Please input text"
-    error.innerHTML = ""; // UPDATE THIS
+    error.innerHTML = "Please input text"; // UPDATE THIS
   }
 }
 
 // OPTIONAL CHALLENGE
 const toggleMode = (btnText) => {
   // complete the function
+  if(btnText.includes('Dark')){
+    toggleButton.innerHTML = "Light Mode";
+    document.body.style.background = 'white';
+    document.body.style.color = 'black';
+  }else{
+    toggleButton.innerHTML = "Dark Mode";
+    document.body.style.background = 'black';
+    document.body.style.color = 'white';
+  }
 }
+
 
 // ************************************************ //
 // **** DO NOT MODIFY THE CODE BELOW THIS LINE **** //
@@ -31,6 +43,7 @@ const toggleButton = document.querySelector("#bg-switch");
 
 // These are event listeners. We will focus on them later in the course
 form.addEventListener("submit", (event) => {
+  console.log("event listner Submit ", event);
   event.preventDefault(); // the default behavior of a form is to reload the page, we do not want that so we want to prevent that behavior
   error.innerHTML = ""; // clear out the innerHTML on submit
   wordCount.innerHTML = ""; // clear out the innerHTML on submit
@@ -39,10 +52,12 @@ form.addEventListener("submit", (event) => {
 });
 
 form.addEventListener("reset", () => {
+  console.log("event listner reset ");
   error.innerHTML = ""; // on reset, clear the innderHTML
   wordCount.innerHTML = ""; // on reset, clear the innderHTML
 });
 
 toggleButton.addEventListener("click", (event) => {
+  console.log("event listner click ", event);
   toggleMode(event.target.innerHTML);
 });
